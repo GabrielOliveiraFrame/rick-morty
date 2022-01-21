@@ -1,0 +1,39 @@
+<div class="row mx-0 px-2 justify-content-around">
+  <div *ngFor="let character of characters" class="content">
+    <div class="card border-secondary mb-3 my-3 rounded w-100">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{character.image}}" alt="{{character.name}}" class="w-100 h-100">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{character.name}}</h5>
+
+            <div class="d-flex mb-3">
+              <div class="status mr-2 mt-2"
+                [class.alive]="character.status == 'Alive'"
+                [class.dead]="character.status == 'Dead'"
+                [class.unknown]="character.status == 'unknown'"
+              ></div>
+              <p class="card-text"><small>{{character.status}} - {{character.species}}</small></p>
+            </div>
+
+            <div class="mb-3">
+              <p class="card-text mb-0"><small class="text-muted">Origem:</small></p>
+              <p class="card-text">{{character.origin.name}}</p>
+            </div>
+
+            <div>
+              <p class="card-text mb-0"><small class="text-muted">Última localização conhecida:</small></p>
+              <p class="card-text">{{character.location.name}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!endOfList" class="load-more col-12 text-center py-3">
+    <button type="button" class="btn btn-outline-primary" (click)="getCharacters()">Ver Mais</button>
+  </div>
+</div>

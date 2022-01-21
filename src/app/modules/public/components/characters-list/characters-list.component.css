@@ -1,0 +1,30 @@
+.content{
+  width: 650px;
+}
+
+.status{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.alive{
+  background-color: rgb(24, 224, 24);
+}
+
+.dead{
+  background-color: rgb(255, 0, 0);
+}
+
+.unknown{
+  background-color: rgb(167, 166, 166);
+}
+
+@media(max-width: 767px){
+  .content{
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+
