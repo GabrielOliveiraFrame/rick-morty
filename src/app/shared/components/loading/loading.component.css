@@ -1,0 +1,9 @@
+.loading-container{
+  position: fixed;
+  z-index: 2;
+}
+
+.spinner-border{
+  width: 100px;
+  height: 100px;
+}
